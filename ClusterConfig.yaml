@@ -1,8 +1,8 @@
 apiVersion: eksctl.io/v1alpha5
 availabilityZones:
-- ap-southeast-2c
-- ap-southeast-2a
 - ap-southeast-2b
+- ap-southeast-2a
+- ap-southeast-2c
 cloudWatch:
   clusterLogging: {}
 iam:
@@ -34,10 +34,10 @@ managedNodeGroups:
   instanceSelector: {}
   labels:
     alpha.eksctl.io/cluster-name: dev
-    alpha.eksctl.io/nodegroup-name: ng-2d2f1f9e
+    alpha.eksctl.io/nodegroup-name: ng-4d28b504
   maxSize: 2
   minSize: 2
-  name: ng-2d2f1f9e
+  name: ng-4d28b504
   privateNetworking: false
   releaseVersion: ""
   securityGroups:
@@ -47,7 +47,8 @@ managedNodeGroups:
     allow: false
     publicKeyPath: ""
   tags:
-    alpha.eksctl.io/nodegroup-name: ng-2d2f1f9e
+    auto-delete: "no"
+    alpha.eksctl.io/nodegroup-name: ng-4d28b504
     alpha.eksctl.io/nodegroup-type: managed
   volumeIOPS: 3000
   volumeSize: 80
@@ -56,6 +57,8 @@ managedNodeGroups:
 metadata:
   name: dev
   region: ap-southeast-2
+  tags:
+    auto-delete: "no"
   version: "1.24"
 privateCluster:
   enabled: false
